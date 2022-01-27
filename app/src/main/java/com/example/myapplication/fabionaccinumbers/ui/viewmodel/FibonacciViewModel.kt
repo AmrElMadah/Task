@@ -41,11 +41,11 @@ class FibonacciViewModel : ViewModel() {
         previousLastFibonacciNumber: BigInteger
     ): Flow<BigInteger> =
         flow {
-            if (lastFibonacciNumber <= BigInteger(ULong.MAX_VALUE.toString())) {
-                val output = calculateNextFibonacciNumber(
-                    lastFibonacciNumber,
-                    previousLastFibonacciNumber
-                )
+            val output = calculateNextFibonacciNumber(
+                lastFibonacciNumber,
+                previousLastFibonacciNumber
+            )
+            if (output <= BigInteger(ULong.MAX_VALUE.toString())) {
                 emit(
                     output
                 )
