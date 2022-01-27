@@ -29,28 +29,9 @@ class MainActivity : ComponentActivity() {
             MyApplicationTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    FibonacciNumbersList(fibonacciViewModel)
+                    FibonacciNumbersList(fibonacciViewModel.mFibonacciNumbersState)
                 }
             }
-        }
-    }
-}
-
-@Composable
-fun FibonacciNumbersList(fibonacciViewModel: FibonacciViewModel) {
-
-    LazyColumn(
-        modifier = Modifier
-            .fillMaxWidth()
-            .wrapContentHeight()
-    ) {
-        items(fibonacciViewModel.mFibonacciNumbersState) { fibonacciNumber ->
-            Text(
-                text = fibonacciNumber.toString(),
-                modifier = Modifier
-                    .wrapContentSize()
-                    .padding(10.dp)
-            )
         }
     }
 }
