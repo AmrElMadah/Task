@@ -21,7 +21,7 @@ import com.example.myapplication.fabionaccinumbers.ui.viewmodel.FibonacciViewMod
 import com.example.myapplication.ui.theme.MyApplicationTheme
 
 class MainActivity : ComponentActivity() {
-    private val fibonacciViewModel by viewModels<FibonacciViewModel>()
+    private val fibonacciViewModel: FibonacciViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,8 +33,6 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-
-        fibonacciViewModel.getNextFibonacciNumber()
     }
 }
 

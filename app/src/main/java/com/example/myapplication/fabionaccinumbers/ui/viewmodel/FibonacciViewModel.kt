@@ -16,7 +16,11 @@ class FibonacciViewModel : ViewModel() {
     val mFibonacciNumbersState = mutableStateListOf(BigInteger("0"), BigInteger("1"))
     private var nextFibonacciIndex = 2
 
-    fun getNextFibonacciNumber() {
+    init {
+        getNextFibonacciNumber()
+    }
+
+    private fun getNextFibonacciNumber() {
         viewModelScope.launch(Dispatchers.IO) {
             delay(100)
             getNextFibonacciNumberRepository(
